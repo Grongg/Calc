@@ -13,7 +13,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'make deploy'
+                sh 'docker build -t calc .'
+                sh 'docker run calc'
             }
         }
     }
